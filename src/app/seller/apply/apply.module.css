@@ -1,0 +1,470 @@
+
+/* ========================================
+   Chapter — Seller Application
+======================================== */
+
+.page {
+  --seller-bg: #080808;
+  --seller-card: #111111;
+  --seller-border: #292929;
+  --seller-text: #f5f5f5;
+  --seller-muted: #a3a3a3;
+
+  min-height: 100vh;
+  padding: 64px 24px 88px;
+  background: var(--seller-bg);
+  color: var(--seller-text);
+}
+
+.hero,
+.formCard,
+.statusCard,
+.error,
+.success {
+  width: 100%;
+  max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.hero {
+  margin-bottom: 38px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: #a3a3a3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(36px, 6vw, 58px);
+  font-weight: 650;
+  line-height: 1.12;
+  letter-spacing: -2.4px;
+}
+
+.hero h1 span {
+  color: #858585;
+}
+
+.intro {
+  max-width: 500px;
+  margin: 22px 0 0;
+  color: var(--seller-muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* ========================================
+   Application Form
+======================================== */
+
+.formCard {
+  padding: 34px;
+  border: 1px solid var(--seller-border);
+  border-radius: 12px;
+  background: var(--seller-card);
+}
+
+.formCard h2,
+.statusCard h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(23px, 4vw, 29px);
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.8px;
+}
+
+.formIntro {
+  margin: 12px 0 30px;
+  color: var(--seller-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.label {
+  display: block;
+  margin-bottom: 10px;
+  color: #e8e8e8;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.optional {
+  color: #777777;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.textarea {
+  display: block;
+  width: 100%;
+  min-height: 132px;
+  padding: 14px 15px;
+  resize: vertical;
+  border: 1px solid #353535;
+  border-radius: 7px;
+  outline: none;
+  background: #0b0b0b;
+  color: #f5f5f5;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.8;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.textarea::placeholder {
+  color: #686868;
+}
+
+.textarea:focus {
+  border-color: #a3a3a3;
+  box-shadow: 0 0 0 3px rgb(255 255 255 / 5%);
+}
+
+.characterCount {
+  margin: 9px 0 22px;
+  color: #777777;
+  font-size: 12px;
+  text-align: right;
+}
+
+.disclaimer {
+  margin: 20px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid #282828;
+  color: #888888;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   Buttons
+======================================== */
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.primaryButton {
+  background: #ffffff;
+  color: #080808;
+  border-color: #ffffff;
+}
+
+.primaryButton:hover:not(:disabled) {
+  background: #d8d8d8;
+  border-color: #d8d8d8;
+}
+
+.primaryButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.formCard .primaryButton {
+  width: 100%;
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #f0f0f0;
+  border-color: #414141;
+}
+
+.secondaryButton:hover {
+  background: #1d1d1d;
+  border-color: #707070;
+}
+
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible,
+.textButton:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* ========================================
+   Application Status Cards
+======================================== */
+
+.statusCard {
+  padding: 36px;
+  border: 1px solid var(--seller-border);
+  border-radius: 12px;
+  background: var(--seller-card);
+}
+
+.statusCard > .eyebrow {
+  margin-top: 24px;
+}
+
+.statusCard > p:not(.eyebrow):not(.meta) {
+  margin: 14px 0 0;
+  color: var(--seller-muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.statusIcon {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #3a3a3a;
+  border-radius: 50%;
+  background: #1a1a1a;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.pendingIcon {
+  color: #d6d6d6;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.approvedIcon {
+  border-color: #444444;
+  background: #202020;
+  color: #ffffff;
+}
+
+.rejectedIcon {
+  border-color: #4a3636;
+  background: #201515;
+  color: #ffb5b5;
+}
+
+.meta {
+  margin: 18px 0 0;
+  color: #858585;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.statusCard > .primaryButton,
+.statusCard > .secondaryButton {
+  margin-top: 26px;
+}
+
+/* Previous application note */
+
+.reasonBox {
+  margin-top: 24px;
+  padding: 18px;
+  border: 1px solid #303030;
+  border-radius: 7px;
+  background: #0b0b0b;
+}
+
+.reasonBox strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #e8e8e8;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.reasonBox p {
+  margin: 0;
+  color: #a3a3a3;
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   Error and Success Feedback
+======================================== */
+
+.error,
+.success {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border: 1px solid #393939;
+  border-radius: 7px;
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.error {
+  border-color: #613333;
+  background: #1d1010;
+  color: #ffb4b4;
+}
+
+.success {
+  border-color: #31533d;
+  background: #101a13;
+  color: #b9e5c5;
+}
+
+.textButton {
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.textButton:hover {
+  color: #c9c9c9;
+}
+
+/* ========================================
+   Loading State
+======================================== */
+
+.page > .statusCard:has(.spinner) {
+  display: flex;
+  min-height: 170px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.spinner {
+  display: block;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border: 2px solid #373737;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: sellerSpin 0.75s linear infinite;
+}
+
+.page > .statusCard:has(.spinner) p {
+  margin: 0;
+  color: #a3a3a3;
+  font-size: 13px;
+}
+
+@keyframes sellerSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   Responsive Layout
+======================================== */
+
+@media (max-width: 600px) {
+  .page {
+    padding: 42px 16px 64px;
+  }
+
+  .hero {
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 9vw, 46px);
+    letter-spacing: -1.7px;
+  }
+
+  .intro {
+    margin-top: 17px;
+    font-size: 14px;
+  }
+
+  .formCard,
+  .statusCard {
+    padding: 25px 21px;
+    border-radius: 9px;
+  }
+
+  .formIntro {
+    margin-bottom: 25px;
+  }
+
+  .statusCard > .primaryButton,
+  .statusCard > .secondaryButton {
+    width: 100%;
+  }
+
+  .error,
+  .success {
+    gap: 10px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .page {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .formCard,
+  .statusCard {
+    padding: 22px 16px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 1.5s;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .textarea {
+    transition: none;
+  }
+}

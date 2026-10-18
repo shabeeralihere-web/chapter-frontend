@@ -1,0 +1,303 @@
+
+.footer {
+  --background: #090909;
+  --border: rgba(255, 255, 255, 0.11);
+  --text: #f5f5f2;
+  --muted: #999995;
+
+  background: var(--background);
+  color: var(--text);
+  border-top: 1px solid var(--border);
+  padding: 65px 8% 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer * {
+  box-sizing: border-box;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footerMain {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 55px;
+  display: grid;
+  grid-template-columns: 1fr 0.65fr;
+  gap: 70px;
+}
+
+.footerIntro,
+.contact {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  line-height: 1.7;
+}
+
+.footerIntro h2 {
+  margin: 0;
+  font-size: clamp(38px, 4.5vw, 62px);
+  font-weight: 900;
+  letter-spacing: -3px;
+  line-height: 0.98;
+}
+
+.footerIntro h2 span {
+  color: #858580;
+}
+
+.exploreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 28px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #777;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  transition: color 180ms ease;
+}
+
+.exploreLink span {
+  font-size: 16px;
+}
+
+.exploreLink:hover {
+  color: #bcbcb6;
+}
+
+.contact {
+  padding-top: 5px;
+}
+
+.contact .eyebrow {
+  margin-bottom: 18px;
+}
+
+.email {
+  display: inline-block;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  transition: color 180ms ease;
+}
+
+.email:hover {
+  color: #bcbcb6;
+}
+
+.contactText {
+  margin: 14px 0 23px;
+  color: #a3a39d;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* Glass-effect social buttons */
+
+.socialLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.socialLink {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.105),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 13px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    0 5px 18px rgba(0, 0, 0, 0.2);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform 200ms ease,
+    background 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.socialLink::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.11),
+    transparent 55%
+  );
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.socialLink svg {
+  position: relative;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+}
+
+.socialLink:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.36);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.socialLink:focus-visible,
+.footer a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.footerBottom {
+  max-width: 1400px;
+  min-height: 76px;
+  margin: 0 auto;
+  border-top: 1px solid var(--border);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.footerBottom p,
+.footerBottom a {
+  margin: 0;
+  color: #888882;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footerBottom a {
+  transition: color 180ms ease;
+}
+
+.footerBottom a:hover {
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .footer {
+    padding: 55px 6% 0;
+  }
+
+  .footerMain {
+    grid-template-columns: 1fr 1fr;
+    gap: 38px;
+  }
+
+  .footerIntro h2 {
+    font-size: clamp(36px, 5.8vw, 48px);
+    letter-spacing: -2px;
+  }
+
+  .email {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer {
+    padding: 43px 6% 0;
+  }
+
+  .footerMain {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    padding-bottom: 38px;
+  }
+
+  .eyebrow {
+    margin-bottom: 17px;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .footerIntro h2 {
+    font-size: clamp(39px, 10vw, 52px);
+    letter-spacing: -2px;
+  }
+
+  .exploreLink {
+    margin-top: 23px;
+  }
+
+  .contact {
+    padding-top: 0;
+  }
+
+  .contactText {
+    font-size: 12px;
+  }
+
+  .socialLinks {
+    gap: 12px;
+  }
+
+  .socialLink {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+  }
+
+  .footerBottom {
+    min-height: auto;
+    padding: 22px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 18px 12px;
+  }
+
+  .footerBottom p {
+    width: 100%;
+    font-size: 8px;
+  }
+
+  .footerBottom a {
+    font-size: 8px;
+    letter-spacing: 0.7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer *,
+  .footer *::before,
+  .footer *::after {
+    transition: none !important;
+  }
+}

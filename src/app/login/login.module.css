@@ -1,0 +1,369 @@
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px 28px;
+  overflow-x: hidden;
+  color: #f5f5f5;
+  background:
+    radial-gradient(ellipse at 50% 15%, rgba(255, 255, 255, 0.09), transparent 45%),
+    radial-gradient(ellipse at 10% 90%, rgba(255, 255, 255, 0.035), transparent 35%),
+    #080808;
+}
+
+.brand {
+  display: none;
+}
+
+.card {
+  width: 100%;
+  max-width: 460px;
+  padding: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 24px;
+  background: rgba(24, 24, 24, 0.72);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.icon {
+  display: none;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: #b0b0b0;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+}
+
+.title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(30px, 5vw, 39px);
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: -1.4px;
+  overflow-wrap: anywhere;
+}
+
+.description {
+  margin: 16px 0 28px;
+  color: #b8b8b8;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.success,
+.alert {
+  margin: 0 0 20px;
+  padding: 13px 15px;
+  border-radius: 11px;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.success {
+  border: 1px solid rgba(160, 220, 180, 0.25);
+  background: rgba(100, 190, 130, 0.09);
+  color: #b9edc8;
+}
+
+.alert {
+  border: 1px solid rgba(255, 120, 120, 0.3);
+  background: rgba(255, 80, 80, 0.08);
+  color: #ffb0b0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label {
+  color: #f3f3f3;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.input,
+.passwordWrap .input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 54px;
+  padding: 0 15px;
+  border: 1px solid #414141;
+  border-radius: 12px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.045);
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.input::placeholder {
+  color: #858585;
+  opacity: 1;
+}
+
+.input:hover {
+  border-color: #606060;
+}
+
+.input:focus {
+  border-color: #c7c7c7;
+  background: rgba(255, 255, 255, 0.065);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.07);
+}
+
+.inputError,
+.inputError:focus {
+  border-color: #ff7777;
+  box-shadow: 0 0 0 3px rgba(255, 80, 80, 0.07);
+}
+
+.passwordWrap {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+}
+
+.passwordWrap .input {
+  padding-right: 76px;
+}
+
+.togglePassword {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 48px;
+  min-height: 42px;
+  padding: 8px 5px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #e2e2e2;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.togglePassword:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.togglePassword:focus-visible,
+.submitButton:focus-visible,
+.link:focus-visible,
+.browseLink:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.error {
+  margin: 0;
+  color: #ff9d9d;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.form > p {
+  align-self: flex-end;
+  margin: -10px 0 -4px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.form > p a {
+  color: #fff;
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-color: #858585;
+  text-underline-offset: 4px;
+}
+
+.form > p a:hover {
+  text-decoration-color: #fff;
+}
+
+.submitButton {
+  display: flex;
+  width: 100%;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 2px;
+  padding: 12px 18px;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  background: #fff;
+  color: #080808;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+.submitButton span {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #e8e8e8;
+}
+
+.submitButton:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.footer {
+  margin: 26px 0 0;
+  color: #b5b5b5;
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.link {
+  color: #fff;
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-color: #777;
+  text-underline-offset: 4px;
+}
+
+.link:hover {
+  text-decoration-color: #fff;
+}
+
+.browseLink {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 20px auto 0;
+  color: #a8a8a8;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.7;
+  text-align: center;
+  text-decoration: none;
+}
+
+.browseLink:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.bottomNote {
+  margin: 26px 0 0;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .page {
+    justify-content: center;
+    padding: 24px 16px;
+  }
+
+  .card {
+    max-width: 440px;
+    padding: 28px 22px;
+    border-radius: 20px;
+  }
+
+  .title {
+    font-size: clamp(29px, 8vw, 35px);
+    letter-spacing: -1px;
+  }
+
+  .description {
+    margin: 14px 0 25px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .form {
+    gap: 20px;
+  }
+
+  .input,
+  .passwordWrap .input {
+    min-height: 54px;
+    font-size: 16px;
+  }
+
+  .submitButton {
+    min-height: 54px;
+    font-size: 16px;
+  }
+
+  .footer {
+    margin-top: 24px;
+  }
+
+  .bottomNote {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .page {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .card {
+    padding: 24px 17px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input,
+  .submitButton {
+    transition: none;
+  }
+}

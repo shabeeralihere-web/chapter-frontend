@@ -1,0 +1,177 @@
+
+/* ================================
+   Chapter — Authentication Pages
+================================ */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  background: #080808;
+  color: #f5f5f5;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 40px;
+  background: #111111;
+  border: 1px solid #292929;
+  border-radius: 12px;
+}
+
+.auth-card h1 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: clamp(28px, 4vw, 34px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+}
+
+.auth-card > p {
+  margin: 0 0 26px;
+  color: #a3a3a3;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-card label {
+  margin-top: 2px;
+  color: #e5e5e5;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.auth-card input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #353535;
+  border-radius: 6px;
+  outline: none;
+  background: #0b0b0b;
+  color: #ffffff;
+  font: inherit;
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.auth-card input::placeholder {
+  color: #666666;
+}
+
+.auth-card input:focus {
+  border-color: #a3a3a3;
+  box-shadow: 0 0 0 3px rgb(255 255 255 / 5%);
+}
+
+.auth-card button {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 10px;
+  padding: 12px 16px;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #080808;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.auth-card button:hover:not(:disabled) {
+  border-color: #d4d4d4;
+  background: #d4d4d4;
+}
+
+.auth-card button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.auth-card button:focus-visible,
+.auth-card a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* Success and error messages */
+
+.auth-card p[role="status"],
+.auth-card p[role="alert"] {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  border: 1px solid #303030;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.auth-card p[role="status"] {
+  border-color: #31533d;
+  background: #101a13;
+  color: #b9e5c5;
+}
+
+.auth-card p[role="alert"] {
+  border-color: #613333;
+  background: #1d1010;
+  color: #ffb4b4;
+}
+
+/* Login link */
+
+.auth-card a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: #666666;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.auth-card a:hover {
+  text-decoration-color: #ffffff;
+}
+
+/* Responsive layout */
+
+@media (max-width: 480px) {
+  .auth-page {
+    align-items: flex-start;
+    padding: 64px 16px 24px;
+  }
+
+  .auth-card {
+    padding: 28px 22px;
+    border-radius: 10px;
+  }
+
+  .auth-card h1 {
+    font-size: 29px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-card input,
+  .auth-card button,
+  .auth-card a {
+    transition: none;
+  }
+}

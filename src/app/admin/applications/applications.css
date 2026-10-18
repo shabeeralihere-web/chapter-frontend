@@ -1,0 +1,785 @@
+
+
+.sellerApplicationsPage {
+  min-height: 100vh;
+  background: #090909;
+  color: #f5f5f5;
+  padding: 40px 28px 64px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sellerApplicationsPage *,
+.sellerApplicationsPage *::before,
+.sellerApplicationsPage *::after {
+  box-sizing: border-box;
+}
+
+.sellerApplicationsPage button,
+.sellerApplicationsPage a {
+  font: inherit;
+}
+
+.sellerApplicationsPage button {
+  cursor: pointer;
+}
+
+.sellerApplicationsPage button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.sellerApplicationsContainer {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Breadcrumb */
+
+.sellerApplicationsBreadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+  color: #858585;
+  font-size: 13px;
+}
+
+.sellerApplicationsBreadcrumb a {
+  color: #bcbcbc;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.sellerApplicationsBreadcrumb a:hover {
+  color: #ffffff;
+}
+
+.sellerApplicationsBreadcrumb > span:last-child {
+  color: #f2f2f2;
+}
+
+/* Page heading */
+
+.sellerApplicationsHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.sellerApplicationsEyebrow {
+  margin: 0 0 10px;
+  color: #a3a3a3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  line-height: 1.5;
+}
+
+.sellerApplicationsHeader h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1.2;
+}
+
+.sellerApplicationsSubtitle {
+  max-width: 600px;
+  margin: 13px 0 0;
+  color: #a1a1a1;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.sellerApplicationsRefresh {
+  display: inline-flex;
+  min-height: 42px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px 16px;
+  border: 1px solid #393939;
+  border-radius: 8px;
+  background: #141414;
+  color: #f5f5f5;
+  font-size: 13px;
+  font-weight: 600;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.sellerApplicationsRefresh:hover:not(:disabled) {
+  border-color: #666666;
+  background: #202020;
+}
+
+.sellerApplicationsRefresh span {
+  font-size: 19px;
+  line-height: 1;
+}
+
+/* Summary */
+
+.sellerApplicationsSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 28px;
+  margin-bottom: 42px;
+  border: 1px solid #303030;
+  border-radius: 12px;
+  background: #111111;
+}
+
+.sellerApplicationsSummary > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sellerApplicationsSummaryLabel {
+  color: #b5b5b5;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.sellerApplicationsSummary strong {
+  margin-top: 4px;
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.35;
+}
+
+.sellerApplicationsSummaryHint {
+  margin-top: 3px;
+  color: #8e8e8e;
+  font-size: 13px;
+}
+
+.sellerApplicationsSummaryIcon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid #393939;
+  border-radius: 10px;
+  background: #1b1b1b;
+  color: #eeeeee;
+  font-size: 25px;
+}
+
+/* Main section */
+
+.sellerApplicationsSection {
+  min-width: 0;
+}
+
+.sellerApplicationsSectionHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.sellerApplicationsSectionHeading h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  line-height: 1.4;
+}
+
+.sellerApplicationsSectionHeading p {
+  margin: 7px 0 0;
+  color: #999999;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Application cards */
+
+.sellerApplicationsList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.sellerApplicationCard {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #303030;
+  border-radius: 12px;
+  background: #111111;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.sellerApplicationCard:hover {
+  border-color: #484848;
+  background: #131313;
+}
+
+.sellerApplicationTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.sellerApplicationIdentity {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 13px;
+}
+
+.sellerApplicationAvatar {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid #424242;
+  border-radius: 50%;
+  background: #252525;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.sellerApplicationApplicant {
+  min-width: 0;
+}
+
+.sellerApplicationApplicant h3 {
+  overflow-wrap: anywhere;
+  margin: 0;
+  color: #f5f5f5;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.sellerApplicationApplicant p {
+  overflow-wrap: anywhere;
+  margin: 3px 0 0;
+  color: #a0a0a0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.sellerApplicationStatus {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 9px;
+  border: 1px solid #514328;
+  border-radius: 6px;
+  background: #211b12;
+  color: #e8c98b;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.sellerApplicationStatus > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e8c98b;
+}
+
+/* Application details */
+
+.sellerApplicationDetails {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 20px;
+  padding: 20px 0;
+  margin-top: 22px;
+  border-top: 1px solid #292929;
+}
+
+.sellerApplicationDetailLabel {
+  display: block;
+  margin-bottom: 7px;
+  color: #888888;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.sellerApplicationDetails p {
+  overflow-wrap: anywhere;
+  margin: 0;
+  color: #e5e5e5;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.sellerApplicationReason p {
+  white-space: pre-wrap;
+}
+
+/* Action buttons */
+
+.sellerApplicationActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 17px;
+  border-top: 1px solid #292929;
+}
+
+.sellerApplicationReject,
+.sellerApplicationApprove {
+  display: inline-flex;
+  min-height: 39px;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 15px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.sellerApplicationReject {
+  border-color: #513131;
+  background: #211313;
+  color: #ffb5b5;
+}
+
+.sellerApplicationReject:hover:not(:disabled) {
+  border-color: #8c4141;
+  background: #321818;
+}
+
+.sellerApplicationApprove {
+  border-color: #dddddd;
+  background: #f5f5f5;
+  color: #111111;
+}
+
+.sellerApplicationApprove:hover:not(:disabled) {
+  border-color: #ffffff;
+  background: #dcdcdc;
+}
+
+/* Error state */
+
+.sellerApplicationsError {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 24px;
+  border: 1px solid #583232;
+  border-radius: 10px;
+  background: #1b1111;
+}
+
+.sellerApplicationsError > span {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid #794343;
+  border-radius: 50%;
+  color: #ffb1b1;
+  font-weight: 700;
+}
+
+.sellerApplicationsError h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.sellerApplicationsError p {
+  overflow-wrap: anywhere;
+  margin: 6px 0 12px;
+  color: #c6a4a4;
+  font-size: 13px;
+}
+
+.sellerApplicationsError button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Empty and loading states */
+
+.sellerApplicationsState,
+.sellerApplicationsEmpty {
+  display: flex;
+  min-height: 230px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  border: 1px solid #292929;
+  border-radius: 12px;
+  background: #101010;
+  text-align: center;
+}
+
+.sellerApplicationsState p,
+.sellerApplicationsEmpty p {
+  max-width: 400px;
+  margin: 12px 0 0;
+  color: #999999;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.sellerApplicationsEmptyIcon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid #393939;
+  border-radius: 50%;
+  background: #1c1c1c;
+  color: #f1f1f1;
+  font-size: 22px;
+}
+
+.sellerApplicationsEmpty h3 {
+  margin: 16px 0 0;
+  color: #f5f5f5;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.sellerApplicationsSpinner {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #3a3a3a;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: sellerApplicationsSpin 700ms linear infinite;
+}
+
+@keyframes sellerApplicationsSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sellerApplicationsLoading {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: #090909;
+  color: #a5a5a5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sellerApplicationsLoading p {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* Back navigation */
+
+.sellerApplicationsBackLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 30px;
+  color: #a5a5a5;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.sellerApplicationsBackLink:hover {
+  color: #ffffff;
+}
+
+/* Confirmation modal */
+
+.sellerApplicationModalBackdrop {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 24px;
+  background: rgb(0 0 0 / 78%);
+  backdrop-filter: blur(5px);
+}
+
+.sellerApplicationModal {
+  width: 100%;
+  max-width: 440px;
+  padding: 30px;
+  border: 1px solid #3a3a3a;
+  border-radius: 14px;
+  background: #121212;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 50%);
+  text-align: center;
+}
+
+.sellerApplicationModalIcon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 19px;
+  place-items: center;
+  border: 1px solid #454545;
+  border-radius: 50%;
+  background: #202020;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.sellerApplicationModal h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.4;
+}
+
+.sellerApplicationModal > p {
+  margin: 12px 0 0;
+  color: #a5a5a5;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.sellerApplicationModalActions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 27px;
+}
+
+.sellerApplicationCancel,
+.sellerApplicationModalApprove,
+.sellerApplicationModalReject {
+  display: inline-flex;
+  min-height: 42px;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 13px;
+  border: 1px solid #3b3b3b;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.sellerApplicationCancel {
+  background: #1b1b1b;
+  color: #eeeeee;
+}
+
+.sellerApplicationCancel:hover:not(:disabled) {
+  border-color: #666666;
+  background: #252525;
+}
+
+.sellerApplicationModalApprove {
+  border-color: #f1f1f1;
+  background: #f1f1f1;
+  color: #111111;
+}
+
+.sellerApplicationModalApprove:hover:not(:disabled) {
+  background: #d8d8d8;
+}
+
+.sellerApplicationModalReject {
+  border-color: #713a3a;
+  background: #301616;
+  color: #ffb7b7;
+}
+
+.sellerApplicationModalReject:hover:not(:disabled) {
+  border-color: #995050;
+  background: #401b1b;
+}
+
+/* Keyboard accessibility */
+
+.sellerApplicationsPage a:focus-visible,
+.sellerApplicationsPage button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* Tablet */
+
+@media (max-width: 850px) {
+  .sellerApplicationsPage {
+    padding: 30px 22px 48px;
+  }
+
+  .sellerApplicationsList {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sellerApplicationCard {
+    padding: 22px;
+  }
+
+  .sellerApplicationsSummary {
+    margin-bottom: 34px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 560px) {
+  .sellerApplicationsPage {
+    padding: 22px 16px 40px;
+  }
+
+  .sellerApplicationsBreadcrumb {
+    margin-bottom: 25px;
+    font-size: 12px;
+  }
+
+  .sellerApplicationsHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  .sellerApplicationsHeader h1 {
+    font-size: 31px;
+    letter-spacing: -1px;
+  }
+
+  .sellerApplicationsSubtitle {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  .sellerApplicationsRefresh {
+    align-self: flex-start;
+  }
+
+  .sellerApplicationsSummary {
+    padding: 20px;
+    margin-bottom: 32px;
+  }
+
+  .sellerApplicationsSummary strong {
+    font-size: 32px;
+  }
+
+  .sellerApplicationsSummaryIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .sellerApplicationsSectionHeading h2 {
+    font-size: 19px;
+  }
+
+  .sellerApplicationsList {
+    gap: 13px;
+  }
+
+  .sellerApplicationCard {
+    padding: 18px;
+  }
+
+  .sellerApplicationTop {
+    flex-wrap: wrap;
+  }
+
+  .sellerApplicationDetails {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin-top: 18px;
+    padding: 17px 0;
+  }
+
+  .sellerApplicationActions {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 8px;
+  }
+
+  .sellerApplicationReject,
+  .sellerApplicationApprove {
+    padding: 9px 10px;
+  }
+
+  .sellerApplicationModalBackdrop {
+    padding: 16px;
+  }
+
+  .sellerApplicationModal {
+    padding: 24px 20px;
+  }
+
+  .sellerApplicationModal h2 {
+    font-size: 20px;
+  }
+
+  .sellerApplicationModalActions {
+    flex-direction: column-reverse;
+  }
+
+  .sellerApplicationCancel,
+  .sellerApplicationModalApprove,
+  .sellerApplicationModalReject {
+    width: 100%;
+    flex: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sellerApplicationsPage *,
+  .sellerApplicationsPage *::before,
+  .sellerApplicationsPage *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

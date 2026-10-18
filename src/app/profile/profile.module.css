@@ -1,0 +1,702 @@
+
+.page {
+  min-height: 75vh;
+  padding: 36px 24px 80px;
+  color: #ffffff;
+  background: #080808;
+}
+
+.container {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* Breadcrumbs */
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 38px;
+  color: #a3a3a3;
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.breadcrumbs a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  color: #e5e5e5;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.breadcrumbs a:hover {
+  color: #ffffff;
+}
+
+.breadcrumbSeparator {
+  flex-shrink: 0;
+  color: #666666;
+}
+
+.currentBreadcrumb {
+  color: #ffffff;
+  font-weight: 850;
+}
+
+/* Page heading */
+
+.pageHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #a3a3a3;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 2.5px;
+}
+
+.pageHeader h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(34px, 5vw, 46px);
+  font-weight: 900;
+  letter-spacing: -1.8px;
+  line-height: 1.1;
+}
+
+.pageDescription {
+  margin: 13px 0 0;
+  color: #a3a3a3;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+/* Main profile glass card */
+
+.card {
+  padding: clamp(24px, 4vw, 38px);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow:
+    0 16px 44px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+/* Profile identity */
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.avatar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  overflow: hidden;
+  color: #080808;
+  background: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.identity {
+  flex: 1;
+  min-width: 0;
+}
+
+.identity h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: #ffffff;
+  font-size: clamp(22px, 3vw, 29px);
+  font-weight: 850;
+  letter-spacing: -0.7px;
+}
+
+.emailLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 13px;
+  color: #b3b3b3;
+  font-size: 15px;
+  font-weight: 550;
+  overflow-wrap: anywhere;
+}
+
+.emailLine svg {
+  flex-shrink: 0;
+}
+
+.role {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  color: #e5e5e5;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid #363636;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 1px;
+}
+
+/* Dividers and section headings */
+
+.divider {
+  height: 1px;
+  margin: 30px 0;
+  background: #303030;
+}
+
+.sectionHeading {
+  margin-bottom: 24px;
+}
+
+.sectionHeading h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 850;
+  letter-spacing: -0.5px;
+}
+
+.sectionHeading p {
+  margin: 8px 0 0;
+  color: #999999;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Details grid */
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.detail {
+  min-width: 0;
+  padding: 19px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid #292929;
+  border-radius: 9px;
+}
+
+.detailLabel {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 12px;
+  color: #a3a3a3;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.detailLabel svg {
+  flex-shrink: 0;
+  color: #d4d4d4;
+}
+
+.detail > p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.detail > .bio {
+  color: #c4c4c4;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Buttons */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cardActions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 26px;
+}
+
+.primaryButton,
+.editButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 20px;
+  color: #080808;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 850;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.primaryButton:hover,
+.editButton:hover {
+  background: #dcdcdc;
+  transform: translateY(-1px);
+}
+
+.editButton {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.logoutButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 19px;
+  color: #ffffff;
+  background: #111111;
+  border: 1px solid #555555;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 850;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.logoutButton:hover {
+  background: #252525;
+  border-color: #888888;
+}
+
+/* Account session section */
+
+.accountSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 24px;
+  padding: 24px 26px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid #292929;
+  border-radius: 12px;
+}
+
+.accountText h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 850;
+}
+
+.accountText p {
+  margin: 7px 0 0;
+  color: #a3a3a3;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+/* Login-required state */
+
+.emptyCard {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: clamp(28px, 5vw, 48px);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid #303030;
+  border-radius: 14px;
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  color: #080808;
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+.emptyCard h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(25px, 4vw, 32px);
+  font-weight: 900;
+  letter-spacing: -0.8px;
+}
+
+.emptyCard > p {
+  margin: 14px 0 26px;
+  color: #a3a3a3;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Loading state */
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 40vh;
+  color: #d4d4d4;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.loading p {
+  margin: 0;
+}
+
+.spinner {
+  flex-shrink: 0;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Logout modal */
+
+.modalOverlay {
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.76);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  padding: 34px;
+  color: #ffffff;
+  background: rgba(18, 18, 18, 0.97);
+  border: 1px solid #404040;
+  border-radius: 14px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  animation: modalEnter 180ms ease-out;
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modalClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: #d4d4d4;
+  background: transparent;
+  border: 1px solid #363636;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modalClose:hover:not(:disabled) {
+  color: #ffffff;
+  background: #252525;
+}
+
+.modalIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 22px;
+  color: #ffffff;
+  background: #242424;
+  border: 1px solid #484848;
+  border-radius: 12px;
+}
+
+.modalEyebrow {
+  margin: 0 0 10px;
+  color: #a3a3a3;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 2px;
+}
+
+.modal h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(24px, 4vw, 29px);
+  font-weight: 900;
+  letter-spacing: -0.8px;
+  line-height: 1.25;
+}
+
+.modal > p:not(.modalEyebrow) {
+  margin: 14px 0 26px;
+  color: #b3b3b3;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+}
+
+.cancelButton,
+.confirmLogoutButton {
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 850;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.cancelButton {
+  color: #ffffff;
+  background: #171717;
+  border: 1px solid #444444;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background: #252525;
+  border-color: #666666;
+}
+
+.confirmLogoutButton {
+  color: #080808;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.confirmLogoutButton:hover:not(:disabled) {
+  background: #dcdcdc;
+  border-color: #dcdcdc;
+}
+
+.cancelButton:disabled,
+.confirmLogoutButton:disabled,
+.modalClose:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Focus visibility */
+
+.breadcrumbs a:focus-visible,
+.primaryButton:focus-visible,
+.editButton:focus-visible,
+.logoutButton:focus-visible,
+.modal button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 700px) {
+  .page {
+    padding: 26px 16px 54px;
+  }
+
+  .breadcrumbs {
+    gap: 9px;
+    margin-bottom: 28px;
+    font-size: 14px;
+  }
+
+  .pageHeader {
+    margin-bottom: 22px;
+  }
+
+  .profileHeader {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+
+  .identity {
+    flex-basis: calc(100% - 90px);
+  }
+
+  .identity h2 {
+    font-size: 23px;
+  }
+
+  .editButton {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .fullWidth {
+    grid-column: auto;
+  }
+
+  .card {
+    padding: 22px 18px;
+  }
+
+  .divider {
+    margin: 24px 0;
+  }
+
+  .accountSection {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .logoutButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .breadcrumbs {
+    font-size: 13px;
+  }
+
+  .breadcrumbs a {
+    gap: 6px;
+  }
+
+  .pageDescription {
+    font-size: 14px;
+  }
+
+  .emailLine {
+    font-size: 13px;
+  }
+
+  .detail {
+    padding: 16px;
+  }
+
+  .modal {
+    padding: 28px 20px 22px;
+  }
+
+  .modalActions {
+    flex-direction: column-reverse;
+  }
+
+  .cancelButton,
+  .confirmLogoutButton {
+    width: 100%;
+    flex: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 2s;
+  }
+
+  .modal {
+    animation: none;
+  }
+
+  .primaryButton,
+  .editButton,
+  .logoutButton,
+  .cancelButton,
+  .confirmLogoutButton {
+    transition: none;
+  }
+}

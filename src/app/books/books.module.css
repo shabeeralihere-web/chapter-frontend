@@ -1,0 +1,682 @@
+
+.page {
+  min-height: 100vh;
+  padding: 42px 5% 70px;
+  background: #080808;
+  color: #f5f5f5;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #a0a0a0;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 2.4px;
+}
+
+.title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 850;
+  letter-spacing: -2.4px;
+  line-height: 1.08;
+}
+
+/* Search and filters */
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 25px;
+  padding: 18px;
+  border: 1px solid #303030;
+  border-radius: 10px;
+  background: rgba(20, 20, 20, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.searchWrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  width: 20px;
+  height: 20px;
+  color: #aaa;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.searchIcon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.searchInput {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px 0 48px;
+  border: 1px solid #383838;
+  border-radius: 8px;
+  outline: none;
+  background: #101010;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  transition: border-color 180ms ease;
+}
+
+.searchInput::placeholder {
+  color: #888;
+}
+
+.searchInput:focus {
+  border-color: #bdbdbd;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: end;
+}
+
+.filterGroup {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filterLabel {
+  color: #bdbdbd;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.filterSelect {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 12px;
+  border: 1px solid #383838;
+  border-radius: 8px;
+  outline: none;
+  background: #111;
+  color: #f5f5f5;
+  font: inherit;
+  font-size: 13px;
+}
+
+.filterSelect:focus {
+  border-color: #bdbdbd;
+}
+
+.filterSelect option {
+  background: #111;
+  color: #fff;
+}
+
+.filterActions {
+  display: flex;
+  align-items: end;
+}
+
+.clearButton {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 17px;
+  border: 1px solid #484848;
+  border-radius: 8px;
+  background: transparent;
+  color: #f2f2f2;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.clearButton:hover {
+  border-color: #fff;
+  background: #fff;
+  color: #080808;
+}
+
+/* Result count */
+
+.resultsBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 18px;
+}
+
+.resultsCount {
+  margin: 0;
+  color: #a0a0a0;
+  font-size: 13px;
+}
+
+.resultsCount strong {
+  color: #fff;
+  font-weight: 800;
+}
+
+/* Product grid */
+
+.bookGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Book card */
+
+.bookCard {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #303030;
+  border-radius: 10px;
+  background: rgba(20, 20, 20, 0.78);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.bookCard:hover {
+  transform: translateY(-3px);
+  border-color: #555;
+  background: rgba(27, 27, 27, 0.94);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.28);
+}
+
+.coverArea {
+  position: relative;
+  padding: 10px 10px 0;
+}
+
+.coverLink {
+  display: block;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #202020;
+  text-decoration: none;
+}
+
+.coverWrap {
+  display: flex;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  align-items: center;
+  justify-content: center;
+  background: #202020;
+}
+
+.coverImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 250ms ease;
+}
+
+.bookCard:hover .coverImage {
+  transform: scale(1.025);
+}
+
+.coverFallback {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px;
+  background: linear-gradient(145deg, #252525, #111);
+  color: #fff;
+  text-align: center;
+}
+
+.fallbackBrand {
+  color: #aaa;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.fallbackRule {
+  width: 35px;
+  height: 1px;
+  background: #888;
+}
+
+.fallbackTitle {
+  display: -webkit-box;
+  overflow: hidden;
+  max-width: 100%;
+  font-size: clamp(13px, 1.5vw, 19px);
+  font-weight: 800;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.fallbackAuthor {
+  display: -webkit-box;
+  overflow: hidden;
+  max-width: 100%;
+  color: #aaa;
+  font-size: 10px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* Wishlist */
+
+.wishlistButton {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  display: flex;
+  width: 37px;
+  height: 37px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: rgba(10, 10, 10, 0.82);
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.wishlistButton svg {
+  width: 19px;
+  height: 19px;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.wishlistButton:hover,
+.wishlistActive {
+  border-color: #fff;
+  background: #fff;
+  color: #080808;
+}
+
+.wishlistButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Book details */
+
+.bookInfo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 14px 15px;
+}
+
+.categoryLabel {
+  align-self: flex-start;
+  max-width: 100%;
+  overflow: hidden;
+  color: #a5a5a5;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 1.2px;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.bookLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.bookTitle {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: #f7f7f7;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.bookLink:hover .bookTitle {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.bookAuthor {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: #a0a0a0;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.cardBottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  margin-top: auto;
+  padding: 12px 0 9px;
+}
+
+.price {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 850;
+  letter-spacing: -0.4px;
+}
+
+.stockUnavailable,
+.lowStock {
+  color: #bdbdbd;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.addButton,
+.secondaryButton,
+.disabledButton {
+  display: flex;
+  width: 100%;
+  min-height: 43px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.addButton {
+  background: #fff;
+  color: #080808;
+}
+
+.addButton:hover {
+  border-color: #d5d5d5;
+  background: #d5d5d5;
+}
+
+.secondaryButton {
+  border-color: #444;
+  background: transparent;
+  color: #fff;
+}
+
+.secondaryButton:hover {
+  border-color: #777;
+  background: #242424;
+}
+
+.disabledButton {
+  border-color: #303030;
+  background: #191919;
+  color: #777;
+  cursor: not-allowed;
+}
+
+/* Loading, error and empty results */
+
+.statePanel {
+  display: flex;
+  min-height: 220px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 30px 20px;
+  border: 1px solid #303030;
+  border-radius: 10px;
+  background: rgba(20, 20, 20, 0.8);
+  text-align: center;
+}
+
+.statePanel h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.statePanel p {
+  margin: 0;
+  color: #a0a0a0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.spinner {
+  width: 29px;
+  height: 29px;
+  border: 2px solid #3b3b3b;
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 750ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.searchInput:focus-visible,
+.filterSelect:focus-visible,
+.clearButton:focus-visible,
+.addButton:focus-visible,
+.secondaryButton:focus-visible,
+.wishlistButton:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* Responsive */
+
+@media (min-width: 1500px) {
+  .bookGrid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1050px) {
+  .bookGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 32px 20px 50px;
+  }
+
+  .title {
+    font-size: clamp(34px, 7.5vw, 46px);
+    letter-spacing: -1.5px;
+  }
+
+  .toolbar {
+    padding: 13px;
+  }
+
+  .filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filterActions {
+    grid-column: 1 / -1;
+  }
+
+  .clearButton {
+    width: 100%;
+  }
+
+  .bookGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .coverArea {
+    padding: 7px 7px 0;
+  }
+
+  .bookInfo {
+    gap: 7px;
+    padding: 11px 10px 12px;
+  }
+
+  .bookTitle {
+    font-size: 13px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .wishlistButton {
+    top: 13px;
+    right: 13px;
+    width: 33px;
+    height: 33px;
+  }
+}
+
+@media (max-width: 420px) {
+  .page {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .filterActions {
+    grid-column: auto;
+  }
+
+  .bookGrid {
+    gap: 9px;
+  }
+
+  .bookInfo {
+    padding: 9px 8px 10px;
+  }
+
+  .bookTitle {
+    font-size: 12px;
+  }
+
+  .bookAuthor {
+    font-size: 11px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .addButton,
+  .secondaryButton,
+  .disabledButton {
+    min-height: 40px;
+    padding: 8px 5px;
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bookCard,
+  .coverImage,
+  .wishlistButton,
+  .clearButton,
+  .addButton,
+  .secondaryButton,
+  .disabledButton {
+    transition: none;
+  }
+
+  .spinner {
+    animation-duration: 1.5s;
+  }
+
+  .bookCard:hover,
+  .bookCard:hover .coverImage {
+    transform: none;
+  }
+}
